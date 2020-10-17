@@ -15,7 +15,7 @@
     Register
   </button>
   <div class="social-media">
-    <i class="fab fa-facebook"></i>
+    <i class="fab fa-facebook-f"></i>
     <i class="fab fa-twitter"></i>
     <i class="fab fa-instagram"></i>
   </div>
@@ -32,12 +32,20 @@ export default class Main extends Vue {}
 <style lang="scss" scoped>
 main {
   display: grid;
+  align-items: center;
   justify-content: center;
+  grid-template-areas:
+    "illustration"
+    "content"
+    "action"
+    "social";
+
   padding-left: 10%;
   padding-right: 10%;
 }
 
 #main-content {
+  grid-area: content;
   display: grid;
   justify-content: center;
 }
@@ -55,35 +63,93 @@ p {
   text-align: center;
 }
 
-button {
+.call-to-action {
+  grid-area: action;
   justify-self: center;
+
+  width: 12.5rem;
+  height: 2.5rem;
+
+  color: hsl(257, 40%, 49%);
   background-color: white;
   border: none;
   border-radius: 1.25rem;
-  width: 12.5rem;
-  height: 2.5rem;
 }
 
 .social-media {
-  color: white;
+  grid-area: social;
   justify-self: center;
   align-self: flex-start;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 0.75rem;
 
+  color: white;
+
   i {
     display: grid;
     align-content: center;
     justify-content: center;
+
     width: 1.5rem;
     height: 1.5rem;
-    border-radius: 0.75rem;
+
+    border-radius: 50%;
     border: 1px solid white;
   }
 }
 
 img {
+  grid-area: illustration;
   width: 100%;
+}
+
+@media (min-width: 60rem) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "illustration content"
+      "illustration action"
+      "illustration social";
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  img {
+    max-width: 50rem;
+  }
+
+  #main-content {
+    align-self: flex-end;
+    margin-left: 5vw;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+    font-weight: 400;
+    line-height: 3rem;
+    text-align: start;
+  }
+
+  p {
+    padding-top: 2rem;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    text-align: start;
+  }
+
+  .call-to-action {
+    justify-self: start;
+    margin-left: 5vw;
+  }
+
+  .social-media {
+    justify-self: end;
+
+    i {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
 }
 </style>
