@@ -47,5 +47,10 @@ body,
 
   color: white;
   font-family: 'Open Sans', sans-serif;
+
+  @media (min-width: 45rem) {
+    background-image: url('/images/bg-desktop.svg');
+    background-size: cover;
+  }
 }
 </style>

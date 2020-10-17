@@ -1,6 +1,6 @@
 <template>
 <main>
-  <img src="/images/illustration-mockups.svg" alt=""/>
+  <img src="/images/illustration-mockups.svg" alt="App illustration"/>
   <article id="main-content">
     <h1>
       Build The Community Your Fans Will Love
@@ -74,6 +74,21 @@ p {
   background-color: white;
   border: none;
   border-radius: 1.25rem;
+
+  transition: all 0.5s;
+
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: hsl(257, 40%, 49%);
+    color: white;
+    border: 1px solid white;
+    font-size: 1rem;
+  }
 }
 
 .social-media {
@@ -96,6 +111,14 @@ p {
 
     border-radius: 50%;
     border: 1px solid white;
+
+    transition: all 0.5s;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
   }
 }
 
@@ -104,7 +127,7 @@ img {
   width: 100%;
 }
 
-@media (min-width: 60rem) {
+@media (min-width: 45rem) {
   main {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
