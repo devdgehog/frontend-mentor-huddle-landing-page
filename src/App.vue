@@ -1,15 +1,8 @@
 <template>
   <div id="app">
-    <header>
-      <img src="/images/logo.svg"/>
-    </header>
+    <Header></Header>
     <router-view />
-    <footer>
-      <p class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-        Coded by <a href="https://twitter.com/devdgehog">devdgehog</a>.
-      </p>
-    </footer>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -28,4 +21,31 @@ export default class App extends Vue {}
 </script>
 
 <style lang="scss">
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body,
+#app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#app {
+  display: grid;
+  align-items: stretch;
+  justify-content: center;
+  grid-template-rows: 1fr 6fr;
+
+  background-color: hsl(257, 40%, 49%);
+  background-image: url('/images/bg-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
 </style>
