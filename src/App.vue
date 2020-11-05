@@ -38,7 +38,7 @@ body,
   display: grid;
   align-items: stretch;
   justify-content: center;
-  grid-template-rows: 1fr 6fr;
+  grid-template-rows: 1fr 8fr;
 
   background-color: hsl(257, 40%, 49%);
   background-image: url('/images/bg-mobile.svg');

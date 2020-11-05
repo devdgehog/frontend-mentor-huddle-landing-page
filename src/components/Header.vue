@@ -11,7 +11,8 @@ header {
 }
 
 img {
-  width: 8.125rem;
-  padding: 2rem;
+  width: 13.25rem;
+  padding-top: 3.75vw;
+  padding-left: 5vw;
 }
 </style>

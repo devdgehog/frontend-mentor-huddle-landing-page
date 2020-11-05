@@ -1,23 +1,29 @@
 <template>
-<main>
-  <img src="/images/illustration-mockups.svg" alt="App illustration"/>
-  <article id="main-content">
-    <h1>
+<main class="mainPanel">
+  <img class="illustration" src="/images/illustration-mockups.svg" alt="App illustration"/>
+  <article class="presentation">
+    <h1 class="presentation__header">
       Build The Community Your Fans Will Love
     </h1>
-    <p>
+    <p class="presentation__text">
       Huddle re-imagines the way we build communities.
       You have a voice, but so does your audience.
       Create connections with your users as you engage in genuine discussion.
     </p>
   </article>
-  <button class="call-to-action">
+  <button class="callToAction">
     Register
   </button>
-  <div class="social-media">
-    <i class="fab fa-facebook-f"></i>
-    <i class="fab fa-twitter"></i>
-    <i class="fab fa-instagram"></i>
+  <div class="socialMedia">
+    <button class="socialMedia__button" aria-label="Share on facebook">
+      <span class="socialMedia__icon fab fa-facebook-f" aria-hidden="true"></span>
+    </button>
+    <button class="socialMedia__button" aria-label="Share on twitter">
+      <span class="socialMedia__icon fab fa-twitter" aria-hidden="true"></span>
+    </button>
+    <button class="socialMedia__button" aria-label="Share on instagram">
+      <span class="socialMedia__icon fab fa-instagram" aria-hidden="true"></span>
+    </button>
   </div>
 </main>
 </template>
@@ -30,13 +36,13 @@ export default class Main extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-main {
+.mainPanel {
   display: grid;
   align-items: center;
   justify-content: center;
   grid-template-areas:
     "illustration"
-    "content"
+    "presentation"
     "action"
     "social";
 
@@ -44,13 +50,13 @@ main {
   padding-right: 10%;
 }
 
-#main-content {
-  grid-area: content;
+.presentation {
+  grid-area: presentation;
   display: grid;
   justify-content: center;
 }
 
-h1 {
+.presentation__header {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   text-align: center;
@@ -58,121 +64,133 @@ h1 {
   line-height: 2rem;
 }
 
-p {
+.presentation__text {
   line-height: 1.5rem;
   text-align: center;
 }
 
-.call-to-action {
+.callToAction {
   grid-area: action;
   justify-self: center;
 
   width: 12.5rem;
   height: 2.5rem;
 
+  font-size: 1.125rem;
   color: hsl(257, 40%, 49%);
   background-color: white;
   border: none;
   border-radius: 1.25rem;
+  box-shadow: 0 0.5vmin 1vmin 0.75vmin rgba(0, 0, 0, 0.2);
 
   transition: all 0.5s;
 
   cursor: pointer;
 
-  &:focus {
-    outline: none;
-  }
-
   &:hover {
-    background-color: hsl(257, 40%, 49%);
+    background-color: transparent;
     color: white;
     border: 1px solid white;
-    font-size: 1rem;
   }
 }
 
-.social-media {
+:focus {
+  outline: none;
+  box-shadow: inset 0rem 0rem 0rem 0.2rem hsl(50, 100%, 50%);
+}
+
+.socialMedia {
   grid-area: social;
   justify-self: center;
   align-self: flex-start;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 0.75rem;
+}
 
-  color: white;
+.socialMedia__button {
+  display: grid;
+  align-content: center;
+  justify-content: center;
 
-  i {
-    display: grid;
-    align-content: center;
-    justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
 
-    width: 1.5rem;
-    height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: transparent;
 
-    border-radius: 50%;
-    border: 1px solid white;
+  transition: all 0.5s;
 
-    transition: all 0.5s;
+  cursor: pointer;
 
-    cursor: pointer;
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
   }
 }
 
-img {
+.socialMedia__icon {
+  font-size: 1.25rem;
+  color: white;
+}
+
+.illustration {
+  justify-self: center;
   grid-area: illustration;
-  width: 100%;
+  width: 49.375vw;
 }
 
 @media (min-width: 45rem) {
-  main {
+  .mainPanel {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 17fr 10fr 4fr;
+    column-gap: 4%;
+    row-gap: 3.5vh;
     grid-template-areas:
-      "illustration content"
+      "illustration presentation"
       "illustration action"
       "illustration social";
     padding-left: 5%;
-    padding-right: 5%;
+    padding-right: 6%;
   }
 
-  img {
+  .illustration {
     max-width: 50rem;
   }
 
-  #main-content {
-    align-self: flex-end;
-    margin-left: 5vw;
-  }
-
-  h1 {
-    font-size: 2.75rem;
-    font-weight: 400;
-    line-height: 3rem;
-    text-align: start;
-  }
-
-  p {
-    padding-top: 2rem;
-    font-size: 1.25rem;
-    line-height: 2rem;
-    text-align: start;
-  }
-
-  .call-to-action {
+  .presentation {
     justify-self: start;
-    margin-left: 5vw;
+    align-self: flex-end;
   }
 
-  .social-media {
-    justify-self: end;
+  .presentation__header {
+    font-size: 2.55rem;
+    font-weight: 400;
+    line-height: 3.75rem;
+    text-align: start;
+  }
 
-    i {
-      width: 2.5rem;
-      height: 2.5rem;
-    }
+  .presentation__text {
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    padding-top: 2vh;
+    text-align: start;
+  }
+
+  .callToAction {
+    align-self: flex-start;
+    justify-self: start;
+    height: 3.5rem;
+    border-radius: 1.75rem;
+  }
+
+  .socialMedia {
+    justify-self: end;
+  }
+
+  .socialMedia__button {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
 </style>
