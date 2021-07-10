@@ -16,24 +16,14 @@
   </button>
   <div class="socialMedia">
     <button class="socialMedia__button" aria-label="Share on facebook">
-      <span class="socialMedia__icon fab fa-facebook-f" aria-hidden="true"></span>
     </button>
     <button class="socialMedia__button" aria-label="Share on twitter">
-      <span class="socialMedia__icon fab fa-twitter" aria-hidden="true"></span>
     </button>
     <button class="socialMedia__button" aria-label="Share on instagram">
-      <span class="socialMedia__icon fab fa-instagram" aria-hidden="true"></span>
     </button>
   </div>
 </main>
 </template>
-
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-
-@Component
-export default class Main extends Vue {}
-</script>
 
 <style lang="scss" scoped>
 .mainPanel {
