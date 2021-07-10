@@ -20,37 +20,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
-* {
-  padding: 0;
-  margin: 0;
-}
-
-html,
-body,
-#app {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-#app {
-  display: grid;
-  align-items: stretch;
-  justify-content: center;
-  grid-template-rows: 1fr 8fr;
-
-  background-color: hsl(257, 40%, 49%);
-  background-image: url('/images/bg-mobile.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  color: white;
-  font-family: 'Open Sans', sans-serif;
-
-  @media (min-width: 45rem) {
-    background-image: url('/images/bg-desktop.svg');
-    background-size: cover;
-  }
-}
-</style>
+<style lang="scss"></style>

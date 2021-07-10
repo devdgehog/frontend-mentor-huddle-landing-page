@@ -4,13 +4,4 @@
 </header>
 </template>
 
-<style lang="scss" scoped>
-.topbar {
-  height: 6rem;
-  display: grid;
-}
-
-img {
-  width: 13.25rem;
-}
-</style>
+<style lang="scss" scoped></style>
