@@ -18,5 +18,8 @@
     "typescript": "^4.3.2",
     "vite": "^2.4.0",
     "vue-tsc": "^0.0.24"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
   }
 }
