@@ -16,13 +16,13 @@
   </button>
   <div class="socialMedia">
     <button class="socialMedia__button" aria-label="Share on facebook">
-      <font-awesome-icon :icon="['fab', 'facebook-f']" class="socialMedia__icon" aria-hidden="true"/>
+      <i class="fab fa-facebook-f socialMedia__icon" aria-hidden="true"></i>
     </button>
     <button class="socialMedia__button" aria-label="Share on twitter">
-      <font-awesome-icon :icon="['fab', 'twitter']" class="socialMedia__icon" aria-hidden="true"/>
+      <i class="fab fa-twitter socialMedia__icon" aria-hidden="true"></i>
     </button>
     <button class="socialMedia__button" aria-label="Share on instagram">
-      <font-awesome-icon :icon="['fab', 'instagram']" class="socialMedia__icon" aria-hidden="true"/>
+      <i class="fab fa-instagram socialMedia__icon" aria-hidden="true"></i>
     </button>
   </div>
 </main>
